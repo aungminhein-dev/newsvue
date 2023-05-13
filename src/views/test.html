@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    width: 360px;
+    height: 100px;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: -1;
+    box-shadow: 10px 10px 15px  rgba(0,0,0,0.2);
+
+}
+.mystyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    bottom: 8px;
+    right: 8px;
+    background: black;
+    border-radius: 10px;
+    color: white;
+
+}
+.wrapper::after{
+    content : '';
+    background: linear-gradient(100deg,rgb(208, 255, 0),rgb(0, 221, 255),rgb(128, 0, 128));
+    width: 790px;
+    height: 600px;
+    position: absolute;
+    z-index: -2;
+    animation : spin 3s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="mystyle">12:00:00</div>
+        </div>
+    </div>
+</body>
+</html>
